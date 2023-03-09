@@ -1,7 +1,7 @@
 
 ## Summary for Logs-20.04-functional
-<code><pre>
 
+<code><pre>
 Tests with results other than PASS that are expected:
     FAIL casenorm/mixed_formd_delete (https://github.com/openzfs/zfs/issues/7633)
     FAIL casenorm/mixed_formd_lookup (https://github.com/openzfs/zfs/issues/7633)
@@ -19,7 +19,10 @@ Tests with result of PASS that are unexpected:
 
 Tests with results other than PASS that are unexpected:
 </pre></code>
-<details><summary>Error Listings</summary><code><pre>
+
+<details><summary>Error Listings</summary>
+    
+    <code><pre>
 Test: /usr/share/zfs/zfs-tests/tests/functional/cli_root/zpool_import/import_rewind_device_replaced (run as root) [00:15] [FAIL]
 02:52:21.13 SUCCESS: set_tunable32 TXG_HISTORY 100
 02:52:21.13 SUCCESS: mkdir -p /var/tmp/bakdev_import-test
@@ -2525,7 +2528,9 @@ Test: /usr/share/zfs/zfs-tests/tests/functional/zvol/zvol_swap/zvol_swap_002_pos
 Test: /usr/share/zfs/zfs-tests/tests/functional/zvol/zvol_swap/zvol_swap_004_pos (run as root) [00:03] [PASS]
 Test: /usr/share/zfs/zfs-tests/tests/functional/zvol/zvol_swap/cleanup (run as root) [00:00] [PASS]
 </pre></code></details>
+
 ## Summary for Logs-22.04-functional
+
 <code><pre>
 
 Tests with results other than PASS that are expected:
@@ -4085,6 +4090,7 @@ Test: /usr/share/zfs/zfs-tests/tests/functional/zvol/zvol_swap/zvol_swap_002_pos
 Test: /usr/share/zfs/zfs-tests/tests/functional/zvol/zvol_swap/zvol_swap_004_pos (run as root) [00:06] [PASS]
 Test: /usr/share/zfs/zfs-tests/tests/functional/zvol/zvol_swap/cleanup (run as root) [00:00] [PASS]
 </pre></code></details>
+
 ## Summary for Logs-20.04-sanity
 <code><pre>
 
