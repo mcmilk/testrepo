@@ -1661,7 +1661,7 @@ Tests with result of PASS that are unexpected:
 
 Tests with results other than PASS that are unexpected:
 </pre>
-<details><summary>Error Listings</summary><pre><small>
+<details><summary>Error Listings</summary><small><pre>
 Test: /usr/share/zfs/zfs-tests/tests/functional/cli_root/zpool_import/import_rewind_device_replaced (run as root) [00:15] [FAIL]
 02:50:38.85 SUCCESS: set_tunable32 TXG_HISTORY 100
 02:50:38.86 SUCCESS: mkdir -p /var/tmp/bakdev_import-test
@@ -4453,7 +4453,7 @@ Test: /usr/share/zfs/zfs-tests/tests/functional/refreserv/refreserv_004_pos (run
 02:46:03.96 SUCCESS: zfs destroy -rf testpool/testfs
 02:46:03.99 SUCCESS: zfs create testpool/testfs
 02:46:04.03 SUCCESS: zfs set mountpoint=/var/tmp/testdir testpool/testfs
-</small></pre></details>
+</pre></small></details>
 <details><summary>All Tests</summary><pre>
 Test: /usr/share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_002_pos (run as root) [00:15] [PASS]
 Test: /usr/share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_003_pos (run as root) [00:00] [PASS]
@@ -5666,7 +5666,7 @@ Tests with result of PASS that are unexpected:
 
 Tests with results other than PASS that are unexpected:
 </pre>
-<details><summary>Error Listings</summary><pre><small>
+<details><summary>Error Listings</summary><small><pre>
 Test: /usr/share/zfs/zfs-tests/tests/functional/casenorm/sensitive_formd_lookup (run as root) [00:00] [FAIL]
 02:01:57.43 ASSERTION: CS-UN FS: lookup succeeds if (case=same)
 02:01:57.46 SUCCESS: zfs create -o casesensitivity=sensitive -o normalization=formD testpool/testfs
@@ -7691,7 +7691,7 @@ Test: /usr/share/zfs/zfs-tests/tests/functional/casenorm/mixed_formd_delete (run
 02:02:01.18 NOTE: Performing local cleanup via log_onexit (cleanup)
 02:02:01.26 SUCCESS: zfs destroy -f testpool/testfs
 02:02:01.26 SUCCESS: rm -rf /var/tmp/testdir
-</small></pre></details>
+</pre></small></details>
 <details><summary>All Tests</summary><pre>
 Test: /usr/share/zfs/zfs-tests/tests/functional/acl/off/setup (run as root) [00:28] [PASS]
 Test: /usr/share/zfs/zfs-tests/tests/functional/acl/off/dosmode (run as root) [00:00] [PASS]
