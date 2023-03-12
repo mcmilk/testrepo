@@ -1,6 +1,21 @@
 
+# Tables
+
+| First Header  | Second Header |
+| ------------- | ------------------ |
+| Contt Cell  | Content Cell  |
+| Content Cdsdsfdsell  | <details><summary>Full Listing</summary><pre>PRE JLKJLKJL</pre></details>  |
+
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
 # Testings
 
+- mal sehen was ich hier so rum spiele ;)
+- mal sehen was ich hier so rum spiele ;)
+- mal sehen was ich hier so rum spiele ;)
 - mal sehen was ich hier so rum spiele ;)
 
 #  Markup Notes

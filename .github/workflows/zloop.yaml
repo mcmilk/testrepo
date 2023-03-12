@@ -6,17 +6,40 @@ on:
 
 jobs:
   zloop:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.sha }}
-
-    - name: Install dependencies
+    - name: echo-default-env-variables
       run: |
-        mkdir $HOME/.ssh
-        echo "${{ secrets.AUTHORIZED_KEYS }}" > $HOME/.ssh/authorized_keys
-        echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_ed25519
-        echo "${{ secrets.KNOWN_HOSTS }}" > $HOME/.ssh/known_hosts
-        chmod 600 $HOME/.ssh/id_ed25519
-        ssh -o StrictHostKeyChecking=no -R 12345:127.0.0.1:22 ${{ secrets.SOME_HOST }} sleep 3600
+        echo "Home: ${HOME}"
+        echo "GITHUB_WORKFLOW   - ${GITHUB_WORKFLOW}"
+        echo "GITHUB_RUN_ID     - ${GITHUB_RUN_ID}"
+        echo "GITHUB_RUN_NUMBER - ${GITHUB_RUN_NUMBER}"
+        echo "GITHUB_ACTION     - ${GITHUB_ACTION}"
+        echo "GITHUB_ACTIONS    - ${GITHUB_ACTIONS}"
+        echo "GITHUB_ACTOR      - ${GITHUB_ACTOR}"
+        echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
+        echo "GITHUB_EVENT_NAME - ${GITHUB_EVENT_NAME}"
+        echo "GITHUB_EVENT_PATH - ${GITHUB_EVENT_PATH}"
+        echo "GITHUB_WORKSPACE  - ${GITHUB_WORKSPACE}"
+        echo "GITHUB_SHA        - ${GITHUB_SHA}"
+        echo "GITHUB_REF        - ${GITHUB_REF}"
+        echo "GITHUB_HEAD_REF   - ${GITHUB_HEAD_REF}"
+        echo "GITHUB_BASE_REF   - ${GITHUB_BASE_REF}"
+        echo "GITHUB_SERVER_URL - ${GITHUB_SERVER_URL}"
+        echo "GITHUB_API_URL    - ${GITHUB_API_URL}"
+        echo "GITHUB_GRAPHQL_URL- ${GITHUB_GRAPHQL_URL}"
+    - name: Tests
+      run: |
+        echo "### headline3"
+        echo "## headline2"
+        echo "# headline1"
+        echo "##[group] XXX"
+        echo "##[endgroup]"
+        echo "<pre> headline \nlala</pre>"
+        echo "- headline"
+    - name: Check it
+      run: |
+        sleep 33441
