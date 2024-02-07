@@ -46,7 +46,7 @@ jobs:
         ls -l $HOME/.ssh
         id
         uname -a
-        ssh -v localhost
+        # ssh -v localhost
         # sudo /usr/bin/dscl . -passwd /Users/runner password0815
         R=`date +%s | cut -b6-`
         echo "SSH Port $R"
