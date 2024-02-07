@@ -6,7 +6,7 @@ on:
 
 jobs:
   zloop:
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
     - uses: actions/checkout@v4
       with:
@@ -40,19 +40,16 @@ jobs:
         mkdir -p $HOME/.ssh
         echo "${{ secrets.AUTHORIZED_KEYS }}" > $HOME/.ssh/authorized_keys
         echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_ed25519
-        echo "${{ secrets.KNOWN_HOSTS }}" > $HOME/.ssh/known_hosts
-        chmod 700 $HOME/.ssh
+        #echo "${{ secrets.KNOWN_HOSTS }}" > $HOME/.ssh/known_hosts
         chmod 600 $HOME/.ssh/authorized_keys
         chmod 600 $HOME/.ssh/id_ed25519
-        ls -l $HOME/.ssh
-        id
         uname -a
         R=`date +%s | cut -b6-`
         echo "SSH Port $R"
         ssh -x -N -C -f -R $R:127.0.0.1:22 mcmilk@${{ secrets.SOME_HOST }}
         sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
-        sudo /usr/sbin/sshd -d
-        cat /etc/ssh/sshd_config
+        sudo /usr/sbin/sshd
+        brew install qemu
     - name: Check it
       run: |
         sleep 33444
