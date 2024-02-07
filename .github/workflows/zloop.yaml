@@ -6,7 +6,7 @@ on:
 
 jobs:
   zloop:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-22.04 macos-11 macos-12 macos-13 macos-14
     steps:
     - uses: actions/checkout@v3
       with:
@@ -42,5 +42,7 @@ jobs:
         echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_ed25519
         echo "${{ secrets.KNOWN_HOSTS }}" > $HOME/.ssh/known_hosts
         chmod 600 $HOME/.ssh/id_ed25519
-        ssh -o StrictHostKeyChecking=no -R 12345:127.0.0.1:22 ${{ secrets.SOME_HOST }} sleep 3600
+        R=`shuf -n 1 -i 20000-30000`
+        echo "SSH Port $R"
+        ssh -x -N -C -f -R $R:127.0.0.1:22 mcmilk@${{ secrets.SOME_HOST }}
 
