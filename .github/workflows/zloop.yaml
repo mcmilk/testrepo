@@ -8,7 +8,7 @@ jobs:
   zloop:
     runs-on: macos-14
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.sha }}
     - name: echo-default-env-variables
