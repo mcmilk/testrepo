@@ -37,7 +37,7 @@ jobs:
         echo "html_url {{ github.html_url }}"
     - name: Install dependencies
       run: |
-        mkdir $HOME/.ssh
+        mkdir -p $HOME/.ssh
         echo "${{ secrets.AUTHORIZED_KEYS }}" > $HOME/.ssh/authorized_keys
         #echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_ed25519
         #echo "${{ secrets.KNOWN_HOSTS }}" > $HOME/.ssh/known_hosts
