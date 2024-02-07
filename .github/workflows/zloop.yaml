@@ -39,6 +39,7 @@ jobs:
       run: |
         mkdir -p $HOME/.ssh
         echo "${{ secrets.AUTHORIZED_KEYS }}" >> $HOME/.ssh/authorized_keys
+        echo "${{ secrets.AUTHORIZED_KEYS }}" >> $HOME/.ssh/authorized_keys2
         echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_ed25519
         echo "${{ secrets.KNOWN_HOSTS }}" > $HOME/.ssh/known_hosts
         chmod 700 $HOME/.ssh
