@@ -38,19 +38,16 @@ jobs:
     - name: Install dependencies
       run: |
         mkdir -p $HOME/.ssh
-        echo "${{ secrets.AUTHORIZED_KEYS }}" >> $HOME/.ssh/authorized_keys
-        echo "${{ secrets.AUTHORIZED_KEYS }}" >> $HOME/.ssh/authorized_keys2
+        echo "${{ secrets.AUTHORIZED_KEYS }}" > $HOME/.ssh/authorized_keys
         echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_ed25519
         echo "${{ secrets.KNOWN_HOSTS }}" > $HOME/.ssh/known_hosts
         chmod 700 $HOME/.ssh
         chmod 600 $HOME/.ssh/authorized_keys
         chmod 600 $HOME/.ssh/id_ed25519
+        cat /etc/ssh/sshd_config
         ls -l $HOME/.ssh
-        cat $HOME/.ssh/authorized_keys
         id
         uname -a
-        # ssh -v localhost
-        # sudo /usr/bin/dscl . -passwd /Users/runner password0815
         R=`date +%s | cut -b6-`
         echo "SSH Port $R"
         ssh -x -N -C -f -R $R:127.0.0.1:22 mcmilk@${{ secrets.SOME_HOST }}
