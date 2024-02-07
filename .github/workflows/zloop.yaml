@@ -44,13 +44,15 @@ jobs:
         chmod 700 $HOME/.ssh
         chmod 600 $HOME/.ssh/authorized_keys
         chmod 600 $HOME/.ssh/id_ed25519
-        cat /etc/ssh/sshd_config
         ls -l $HOME/.ssh
         id
         uname -a
         R=`date +%s | cut -b6-`
         echo "SSH Port $R"
         ssh -x -N -C -f -R $R:127.0.0.1:22 mcmilk@${{ secrets.SOME_HOST }}
+        sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
+        sudo /usr/sbin/sshd -d
+        cat /etc/ssh/sshd_config
     - name: Check it
       run: |
         sleep 33444
