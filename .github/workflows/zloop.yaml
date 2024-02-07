@@ -44,7 +44,8 @@ jobs:
         chmod 600 $HOME/.ssh/id_ed25519
         id
         uname -a
-        sudo /usr/bin/dscl . -passwd /Users/runner password0815
+        ssh -v localhost
+        # sudo /usr/bin/dscl . -passwd /Users/runner password0815
         R=`date +%s | cut -b6-`
         echo "SSH Port $R"
         ssh -x -N -C -f -R $R:127.0.0.1:22 mcmilk@${{ secrets.SOME_HOST }}
