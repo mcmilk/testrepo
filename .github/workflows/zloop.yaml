@@ -6,7 +6,7 @@ on:
 
 jobs:
   zloop:
-    runs-on: ubuntu-latest, macos-latest, macos-14
+    runs-on:  macos-latest
     steps:
     - uses: actions/checkout@v4
       with:
