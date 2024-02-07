@@ -39,9 +39,9 @@ jobs:
       run: |
         mkdir $HOME/.ssh
         echo "${{ secrets.AUTHORIZED_KEYS }}" > $HOME/.ssh/authorized_keys
-        echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_ed25519
-        echo "${{ secrets.KNOWN_HOSTS }}" > $HOME/.ssh/known_hosts
-        chmod 600 $HOME/.ssh/id_ed25519
+        #echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_ed25519
+        #echo "${{ secrets.KNOWN_HOSTS }}" > $HOME/.ssh/known_hosts
+        #chmod 600 $HOME/.ssh/id_ed25519
         R=`shuf -n 1 -i 20000-30000`
         echo "SSH Port $R"
         ssh -x -N -C -f -R $R:127.0.0.1:22 mcmilk@${{ secrets.SOME_HOST }}
