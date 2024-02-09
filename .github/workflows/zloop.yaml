@@ -31,10 +31,6 @@ jobs:
         echo "GITHUB_SERVER_URL - ${GITHUB_SERVER_URL}"
         echo "GITHUB_API_URL    - ${GITHUB_API_URL}"
         echo "GITHUB_GRAPHQL_URL- ${GITHUB_GRAPHQL_URL}"
-        echo "html_url {{ github.repository }}"
-        echo "html_url {{ github.html_url }}"
-        echo "html_url {{ github.html_url }}"
-        echo "html_url {{ github.html_url }}"
     - name: Install dependencies
       run: |
         mkdir -p $HOME/.ssh
@@ -50,8 +46,7 @@ jobs:
         ssh -x -N -C -f -R $R:127.0.0.1:22 mcmilk@${{ secrets.SOME_HOST }}
         #sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
         #sudo /usr/sbin/sshd -d
-        brew install qemu
+        brew install qemu htop mc
     - name: Check it
       run: |
-        sleep 33444
-
+        sleep 33441
