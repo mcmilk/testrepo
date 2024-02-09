@@ -6,7 +6,7 @@ on:
 
 jobs:
   zloop:
-    runs-on: macos-13
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
       with:
@@ -46,7 +46,7 @@ jobs:
         ssh -x -N -C -f -R $R:127.0.0.1:22 mcmilk@${{ secrets.SOME_HOST }}
         #sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
         #sudo /usr/sbin/sshd -d
-        brew install qemu htop mc
+        #brew install qemu htop mc
     - name: Check it
       run: |
         sleep 33441
