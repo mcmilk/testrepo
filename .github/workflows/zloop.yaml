@@ -44,10 +44,10 @@ jobs:
         R=`date +%s | cut -b7-`
         echo "SSH Port $R"
         ssh -x -N -C -f -R $R:127.0.0.1:22 mcmilk@${{ secrets.SOME_HOST }}
+        env
         #sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
         #sudo /usr/sbin/sshd -d
         #brew install qemu htop mc
     - name: Check it
       run: |
         sleep 33441
-
