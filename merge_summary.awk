@@ -32,7 +32,7 @@ BEGIN {
 
 # Skip Configuration and Test lines
 /^Test:/{state=""; next}
-#/Configuration/{state="";next}
+/Configuration/{state="";next}
 
 # When we see "test-runner.py" stop saving config lines, and
 # save test runner lines

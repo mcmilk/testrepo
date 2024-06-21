@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-#rm out*
 set -eu
 
 ######################################################################
@@ -157,8 +156,9 @@ function generate() {
 
   for f in debug-vm*.txt; do cat $f >> debug.txt; done
   touch debug.txt
-  S=`stat --printf="%s/1024" "debug.txt"|bc`
-  showfile "debug.txt" "Debug file ($S KiB)"
+  S=`stat --printf="%s" "debug.txt"`
+  KB=`echo "$S/1024"|bc`
+  showfile "debug.txt" "Debug file ($KB KiB)"
 }
 
 # functional tests via qemu
