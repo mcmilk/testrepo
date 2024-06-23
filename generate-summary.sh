@@ -183,7 +183,7 @@ function summarize() {
 # [x] split files into smaller ones and create additional steps
 
 # first call, generate all summaries
-if [ ! -f out-0.md ]; then
+if [ ! -f out-1.md ]; then
   # create ./zts-report.py for generate()
   TEMPLATE="tests/test-runner/bin/zts-report.py.in"
   cat $TEMPLATE| sed -e 's|@PYTHON_SHEBANG@|python3|' > ./zts-report.py
