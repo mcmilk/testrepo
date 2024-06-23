@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+rm out*
 set -eu
 
 ######################################################################
@@ -125,7 +125,7 @@ function generate() {
     if [ -s $results ]; then
       touch /tmp/mark-vm$i
       MARK=`cat /tmp/mark-vm$i`
-      showfile $results "vm$1: test output [$MARK]"
+      showfile $results "vm$i: test output [$MARK]"
     fi
 
     if [ -s "vm$i/console.txt" ]; then
