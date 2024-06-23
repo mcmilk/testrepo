@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+rm out*
 set -eu
 
 ######################################################################
@@ -7,7 +8,7 @@ set -eu
 # /tr 2024-06-17
 ######################################################################
 
-DEBUG_MAX="50"
+DEBUG_MAX="100"
 
 function output() {
   echo -e $* >> "out-$logfile.md"
@@ -70,6 +71,7 @@ function generate() {
   ####################################################################
 
   # headline of this summary
+  logfile=$((logfile+1))
   output "\n# Functional Tests: $osname\n"
   for i in `seq 1 $VMs`; do
     for f in uname.txt build-stderr.txt dmesg-prerun.txt dmesg-module-load.txt; do
@@ -190,7 +192,7 @@ if [ ! -f out-0.md ]; then
 
   logfile="0"
   summarize
-  send2github out-0.md
+  send2github out-1.md
 else
   send2github out-$1.md
 fi
