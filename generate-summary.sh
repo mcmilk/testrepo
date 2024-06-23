@@ -136,7 +136,7 @@ function generate() {
     awk '/\[FAIL\]|\[KILLED\]/{ show=1; print; next; } \
       /\[SKIP\]|\[PASS\]/{ show=0; } show' $log > debug.txt
     S=`stat --printf="%s" "debug.txt"`
-    if [ $S -gt $((1024*$DEBUG_MAX)) ]; then
+    if [ $S -gt $((1024*DEBUG_MAX)) ]; then
       dd if=debug.txt of=debug-vm$i.txt count=$DEBUG_MAX bs=1024 2>/dev/null
       echo "..." >> debug-vm$i.txt
       echo "!!! THIS FILE IS BIGGER !!!" >> debug-vm$i.txt
