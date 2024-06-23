@@ -7,7 +7,7 @@ set -eu
 # /tr 2024-06-17
 ######################################################################
 
-DEBUG_MAX="330"
+DEBUG_MAX="50"
 
 function output() {
   echo -e $* >> "out-$logfile.md"
@@ -102,7 +102,7 @@ function generate() {
       if [ -s "vm$i/console.txt" ]; then
         cat "vm$i/console.txt" | \
           sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" > "vm${i}log"
-        showfile "vm${i}log" "Serial console output of vm$i on $osname"
+        showfile "vm${i}log" "vm$i: serial console output"
         rm -f "vm${i}log"
       fi
       touch $log
@@ -125,11 +125,11 @@ function generate() {
     if [ -s $results ]; then
       touch /tmp/mark-vm$i
       MARK=`cat /tmp/mark-vm$i`
-      showfile $results "Test output of vm$i $MARK"
+      showfile $results "vm$1: test output [$MARK]"
     fi
 
     if [ -s "vm$i/console.txt" ]; then
-      showfile "vm$i/console.txt" "Serial console output of vm$i"
+      showfile "vm$i/console.txt" "vm$i: serial console output"
     fi
 
     awk '/\[FAIL\]|\[KILLED\]/{ show=1; print; next; } \
