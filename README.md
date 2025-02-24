@@ -11,6 +11,11 @@
 | git status   | git status     | git status    |
 | git diff     | git diff       | git diff      |
 
+# About me
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=mcmilk"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mcmilk&layout=compact"/>
+
 # Testings
 
 - mal sehen was ich hier so rum spiele ;)
