@@ -44,6 +44,12 @@
 - cloud-native storage built using Kubernetes and container primitives
 - sehr aktives Projekt
 
+## [dCache](https://github.com/dCache/dcache)
+- 302 stars, 29 watching, 142 forks, AGPL v3, Java, 95.2%, JavaScript 2.0%
+- dCache is a system for storing and retrieving huge amounts of data
+- distributed among a large number of heterogeneous server nodes
+- xrootd, pNFS, HSM, etc.
+
 ### [Sheepdog](https://github.com/sheepdog/sheepdog)
 - 1k stars, 133 watching, 266 forks, GPL-2.0 license, C 79.9%, Assembly 7.0%
 - distributed Storage System for KVM / QEMU
