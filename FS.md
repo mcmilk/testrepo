@@ -41,6 +41,12 @@
 - distributed among a large number of heterogeneous server nodes
 - xrootd, pNFS, HSM, etc.
 
+## [Lustre](https://www.lustre.org/)
+- parallel file system that supports many requirements of leadership class HPC simulation environments
+- Metadata Server (MDS), Object Storage Server (OSS), Lustre clients
+- using the Lustre ldiskfs OSD only, it will be necessary to patch the kernel before building Lustre
+- Lustre ZFS OSD and the Lustre client code do not require patches to the kernel
+
 ### [SaunaFS](https://github.com/leil-io/saunafs)
 - 81 stars, 6 watching, 6 forks, GPL-3.0 license
 - a new distributed POSIX file system inspired by the Google File System
