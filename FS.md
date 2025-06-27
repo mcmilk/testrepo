@@ -29,15 +29,6 @@
 
 ## Distributed FileSystems
 
-### [SaunaFS](https://github.com/leil-io/saunafs)
-- 81 stars, 6 watching, 6 forks, GPL-3.0 license
-- distributed POSIX file system inspired by the Google File System
-- chunk-based storage architecture
-- segmenting files into 64 MiB chunks subdivided into 64 KiB blocks each with 4 bytes of CRC for data integrity
-- Metadata Servers (Master, Shadows, Metaloggers)
-- Data Servers (Chunkservers)
-- Clients for (supporting multiple operating systems and NFS).
-
 ### [Longhorn](https://github.com/longhorn/longhorn)
 - 6.8k stars, 98 watching, 642 forks, Apache-2.0 license, Shell 83.4%, Python 12.7%
 - distributed block storage system for Kubernetes
@@ -49,6 +40,15 @@
 - dCache is a system for storing and retrieving huge amounts of data
 - distributed among a large number of heterogeneous server nodes
 - xrootd, pNFS, HSM, etc.
+
+### [SaunaFS](https://github.com/leil-io/saunafs)
+- 81 stars, 6 watching, 6 forks, GPL-3.0 license
+- a new distributed POSIX file system inspired by the Google File System
+- chunk-based storage architecture
+- segmenting files into 64 MiB chunks subdivided into 64 KiB blocks each with 4 bytes of CRC for data integrity
+- Metadata Servers (Master, Shadows, Metaloggers)
+- Data Servers (Chunkservers)
+- Clients for (supporting multiple operating systems and NFS).
 
 ### [Sheepdog](https://github.com/sheepdog/sheepdog)
 - 1k stars, 133 watching, 266 forks, GPL-2.0 license, C 79.9%, Assembly 7.0%
